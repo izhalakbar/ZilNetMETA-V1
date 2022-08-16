@@ -35,7 +35,7 @@ rule-providers:
 proxy-providers:
   ZilVpn:
     type: http
-    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA/main/Admin/VP.yaml
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
     interval: 3600
     path: "./VP.yaml"
     health-check:
