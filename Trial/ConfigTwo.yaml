@@ -38,7 +38,7 @@ proxy-providers:
     type: http
     url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Trial/VPTWO.yaml
     interval: 3600
-    path: "./VP.yaml"
+    path: "./VPTWO.yaml"
     health-check:
       enable: true
       interval: 600
