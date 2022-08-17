@@ -1,1 +1,47 @@
-
+proxies:
+- name: 🇸🇬 universal
+  server: 104.17.3.81
+  port: 443
+  type: vmess
+  uuid: fbf78c1f-6f42-45e0-a1a9-67de703b90f8
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: api.midtrans.com
+  network: ws
+  ws-opts:
+    path: ws://api.midtrans.com/fastssh/abcddd/62fcdc3432dd0/
+    headers:
+      Host: sg3.v2-ray.com
+  udp: true
+- name: 🇸🇬 sosmed
+  server: 104.17.3.81
+  port: 443
+  type: trojan
+  password: a0438e80-1e24-11ed-9440-1239d0255272
+  skip-cert-verify: true
+  sni: api.midtrans.com
+  network: ws
+  ws-opts:
+   path: wss://api.midtrans.com/howdy
+   headers:
+    Host: sg8-trojan.bonds.id
+  udp: true
+- name: 🇸🇬 stream
+  server: 104.17.3.81
+  port: 443
+  type: vless
+  uuid: 81f1f510-3ca7-4734-8956-0f4fce670af5
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: api.midtrans.com
+  network: ws
+  ws-opts:
+    path: ws://api.midtrans.com/fastssh/abcddd/62fcda8b3369e/
+    headers:
+      Host: sg2.vless.co
+  udp: true
+  
+  
