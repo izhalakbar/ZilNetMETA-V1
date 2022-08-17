@@ -37,7 +37,7 @@ proxy-providers:
     type: http
     url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Trial/VPONE.yaml
     interval: 3600
-    path: "./VP.yaml"
+    path: "./VPONE.yaml"
     health-check:
       enable: true
       interval: 600
