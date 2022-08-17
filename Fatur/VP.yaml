@@ -1,7 +1,7 @@
 
 proxies:
 - name: 🇸🇬 universal
-  server: 104.17.3.81
+  server: 162.159.138.78
   port: 443
   type: vmess
   uuid: fbf78c1f-6f42-45e0-a1a9-67de703b90f8
@@ -9,28 +9,28 @@ proxies:
   cipher: auto
   tls: true
   skip-cert-verify: true
-  servername: api.midtrans.com
+  servername: space.byu.id
   network: ws
   ws-opts:
-    path: ws://api.midtrans.com/fastssh/faturuniv/62fc7b9e112b4/
+    path: ws://space.byu.id/fastssh/faturuniv/62fc7b9e112b4/
     headers:
       Host: sg3.v2-ray.com
   udp: true
 - name: 🇸🇬 sosmed
-  server: 104.17.3.81
+  server: 162.159.138.78
   port: 443
   type: trojan
   password: 89ed0c90-1ded-11ed-9053-1239d0255272
   skip-cert-verify: true
-  sni: api.midtrans.com
+  sni: space.byu.id
   network: ws
   ws-opts:
-   path: wss://api.midtrans.com/howdy
+   path: ws://space.byu.id/howdy
    headers:
     Host: sg2-trojan.bonds.id
   udp: true
 - name: 🇸🇬 stream
-  server: 104.17.3.81
+  server: 162.159.138.78
   port: 443
   type: vless
   uuid: 81f1f510-3ca7-4734-8956-0f4fce670af5
@@ -40,7 +40,7 @@ proxies:
   servername: api.midtrans.com
   network: ws
   ws-opts:
-    path: ws://api.midtrans.com/fastssh/faturstream/62fc7d47abc38/
+    path: ws://space.byu.id/fastssh/faturstream/62fc7d47abc38/
     headers:
       Host: sg1.vless.co
   udp: true
