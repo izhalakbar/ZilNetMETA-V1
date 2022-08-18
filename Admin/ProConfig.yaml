@@ -54,7 +54,6 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 # ================= ZILNET META ==================
 proxy-groups:
-
   - name: 🚀 PG-Universal
     type: select
     use:
