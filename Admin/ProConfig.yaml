@@ -55,18 +55,6 @@ proxy-providers:
 # ================= ZILNET META ==================
 proxy-groups:
 
-  - name: 🚀 GLoadBalance
-    type: load-balance
-    strategy: consistent-hashing
-    disable-udp: false
-    proxies:
-    - 🚀 PG-Universal
-    - 🚀 PG-Sosmed
-    - 🚀 PG-Streaming
-    - 🚀 PG-Gaming
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-
   - name: 🚀 PG-Universal
     type: select
     use:
@@ -181,6 +169,6 @@ rules:
   - RULE-SET,RP-Gaming,🚀 PG-Gaming
   - RULE-SET,RP-Sosmed,🚀 PG-Sosmed
   - RULE-SET,RP-Streaming,🚀 PG-Streaming
-  - MATCH,🚀 GLoadBalance
+  - MATCH,🚀 PG-Universal
   
   
