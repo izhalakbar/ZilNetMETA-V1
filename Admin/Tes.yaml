@@ -71,12 +71,6 @@ rule-providers:
     interval: 86400
 # ================= ZILNET META ==================
 proxy-groups:
-
-
-
-
-
-  
   - name: Gloadbalance
     type: load-balance
     strategy: consistent-hashing
@@ -175,7 +169,7 @@ rules:
   - RULE-SET,RP-Reject,REJECT
   - RULE-SET,RP-Sosmed,GSosmed
   - RULE-SET,RP-Streaming,GStream
-  - MATCH,GUniversal
+  - MATCH,Gloadbalance
 # ================= ZILNET META ==================
 geodata-mode: false
 geodata-loader: memconservative
