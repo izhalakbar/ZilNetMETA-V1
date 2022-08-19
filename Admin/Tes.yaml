@@ -87,10 +87,10 @@ proxy-groups:
       type: url-test
       disable-udp: false
       url: http://www.gstatic.com/generate_204
-      interval: 300
-      tolerance: 50
       proxies:
         - PUniversal
+      interval: 300
+      tolerance: 50
       
   - name: GSosmed
     type: select
