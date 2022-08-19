@@ -36,7 +36,7 @@ rule-providers:
 proxy-providers:
   ZilVpn:
     type: http
-    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Trial/VPTWO.yaml
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Trial/VPTREE.yaml
     interval: 3600
     path: "./VPTWO.yaml"
     health-check:
