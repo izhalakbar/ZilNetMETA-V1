@@ -122,7 +122,7 @@ proxy-providers:
     type: http
     path: "./VP.yaml"
     url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
-    filter: 'universal'
+    filter: '🇸🇬 universal'
     interval: 3600
     health-check:
       enable: true
@@ -133,7 +133,7 @@ proxy-providers:
     type: http
     path: "./VP.yaml"
     url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
-    filter: 'sosmed'
+    filter: '🇸🇬 sosmed'
     interval: 3600
     health-check:
       enable: true
@@ -144,7 +144,7 @@ proxy-providers:
     type: http
     path: "./VP.yaml"
     url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
-    filter: 'stream'
+    filter: '🇸🇬 stream'
     interval: 3600
     health-check:
       enable: true
@@ -155,7 +155,7 @@ proxy-providers:
     type: http
     path: "./VP.yaml"
     url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
-    filter: 'game'
+    filter: '🇸🇬 game'
     interval: 3600
     health-check:
       enable: true
