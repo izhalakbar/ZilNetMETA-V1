@@ -112,7 +112,7 @@ proxy-groups:
     type: select
     disable-udp: false
     use:
-      - PStream
+      - PGame
     url: http://www.gstatic.com/generate_204
     interval: 300
     
@@ -120,7 +120,7 @@ proxy-groups:
 proxy-providers:
   PUniversal:
     type: http
-    path: "./Universal.yaml"
+    path: "./VP.yaml"
     url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
     filter: 'universal'
     interval: 3600
@@ -131,7 +131,7 @@ proxy-providers:
       
   PSosmed:
     type: http
-    path: "./Sosmed.yaml"
+    path: "./VP.yaml"
     url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
     filter: 'sosmed'
     interval: 3600
@@ -142,7 +142,7 @@ proxy-providers:
       
   PStream:
     type: http
-    path: "./Stream.yaml"
+    path: "./VP.yaml"
     url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
     filter: 'stream'
     interval: 3600
@@ -153,9 +153,9 @@ proxy-providers:
       
   PGame:
     type: http
-    path: "./Game.yaml"
+    path: "./VP.yaml"
     url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
-    filter: 'stream'
+    filter: 'game'
     interval: 3600
     health-check:
       enable: true
