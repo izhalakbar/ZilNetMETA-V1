@@ -71,6 +71,23 @@ rule-providers:
     interval: 86400
 # ================= ZILNET META ==================
 proxy-groups:
+
+
+
+
+
+  
+  - name: Gloadbalance
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - GUniversal
+      - GSosmed
+      - GStream
+      - GGame
+      
   - name: GUniversal
     type: select
     disable-udp: false
