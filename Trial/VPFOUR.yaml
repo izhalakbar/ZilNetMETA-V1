@@ -3,7 +3,7 @@ proxies:
   server: 104.17.3.81
   port: 443
   type: vmess
-  uuid: ff382d09-becd-41cb-8e4f-3e256b27de47
+  uuid: fbf78c1f-6f42-45e0-a1a9-67de703b90f8
   alterId: 0
   cipher: auto
   tls: true
@@ -11,15 +11,15 @@ proxies:
   servername: api.midtrans.com
   network: ws
   ws-opts:
-    path: ws://api.midtrans.com/fastssh/abcddd/62ff7d1ddf190/
+    path: ws://api.midtrans.com/fastssh/aseekkk/62ff86162f5aa/
     headers:
-      Host: sg2.v2-ray.com
+      Host: sg3.v2-ray.com
   udp: true
 - name: 🇸🇬 sosmed
   server: 104.17.3.81
   port: 443
   type: trojan
-  password: 2e0fa300-1fb7-11ed-8d06-1239d0255272
+  password: 5db89140-1fbc-11ed-bc49-1239d0255272
   skip-cert-verify: true
   sni: api.midtrans.com
   network: ws
@@ -39,7 +39,7 @@ proxies:
   servername: api.midtrans.com
   network: ws
   ws-opts:
-    path: ws://api.midtrans.com/fastssh/abcdd/62ff7e70bfb2f/
+    path: ws://api.midtrans.com/fastssh/hhhh/62ff86bf4609c/
     headers:
       Host: sg2.vless.co
   udp: true
