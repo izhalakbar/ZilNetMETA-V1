@@ -107,14 +107,6 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     
-  - name: GGame
-      type: select
-      disable-udp: false
-      use:
-        - PGame
-      url: http://www.gstatic.com/generate_204
-      interval: 300
-
 # ================= ZILNET META ==================
 proxy-providers:
   PUniversal:
