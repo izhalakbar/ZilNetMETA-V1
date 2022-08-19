@@ -75,9 +75,8 @@ proxy-groups:
     type: load-balance
     strategy: consistent-hashing
     disable-udp: false
-    use:
-      - GUniversal
     proxies:
+      - GUniversal
       - GSosmed
       - GStream
       - GGame
