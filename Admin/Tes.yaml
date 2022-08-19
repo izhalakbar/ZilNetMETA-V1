@@ -80,7 +80,7 @@ proxy-groups:
     proxies:
       - GSosmed
       - GStream
-      - 
+      - GGame
     url: http://www.gstatic.com/generate_204
     interval: 300
     
