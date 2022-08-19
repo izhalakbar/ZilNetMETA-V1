@@ -83,6 +83,14 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     
+  - name: GUniversal
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    proxies:
+      - PUniversal
+    interval: 300
+    tolerance: 150
+      
   - name: GSosmed
     type: select
     disable-udp: false
