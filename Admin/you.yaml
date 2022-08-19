@@ -79,8 +79,8 @@ proxy-groups:
     proxies:
       - GUniversal
       - GSosmed
-      - GStream
-      - GGame
+      - GStream 🧸
+      - GGame 📡
       
   - name: GUniversal
     type: select
@@ -98,7 +98,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     
-  - name: GStream
+  - name: GStream 🧸
     type: select
     disable-udp: false
     use:
@@ -106,7 +106,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     
-  - name: GGame
+  - name: GGame 📡
     type: select
     disable-udp: false
     use:
@@ -171,9 +171,9 @@ rules:
   
   - RULE-SET,RP-Direct,DIRECT
   - RULE-SET,RP-Reject,REJECT
-  - RULE-SET,RP-Gaming,GGame
+  - RULE-SET,RP-Gaming,GGame 📡
   - RULE-SET,RP-Sosmed,GSosmed
-  - RULE-SET,RP-Streaming,GStream
+  - RULE-SET,RP-Streaming,GStream 🧸
   - MATCH,GUniversal
 # ================= ZILNET META ==================
 geodata-mode: false
