@@ -71,18 +71,6 @@ rule-providers:
     interval: 86400
 # ================= ZILNET META ==================
 proxy-groups:
-  - name: GLoadBalance
-    type: load-balance
-    strategy: consistent-hashing
-    disable-udp: false
-    proxies:
-      - GUniversal
-      - GSosmed
-      - GStream
-      - GGame
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    
   - name: GUniversal
     type: select
     disable-udp: false
@@ -170,7 +158,7 @@ rules:
   - RULE-SET,RP-Reject,REJECT
   - RULE-SET,RP-Sosmed,GSosmed
   - RULE-SET,RP-Streaming,GStream
-  - MATCH,GLoadBalance
+  - MATCH,GUniversal
 # ================= ZILNET META ==================
 geodata-mode: false
 geodata-loader: memconservative
