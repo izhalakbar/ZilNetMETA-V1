@@ -174,7 +174,7 @@ rules:
   - RULE-SET,RP-Gaming,GGame
   - RULE-SET,RP-Sosmed,GSosmed
   - RULE-SET,RP-Streaming,GStream
-  - MATCH,Gloadbalance
+  - MATCH,GUniversal
 # ================= ZILNET META ==================
 geodata-mode: false
 geodata-loader: memconservative
