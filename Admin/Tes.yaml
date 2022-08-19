@@ -75,6 +75,8 @@ proxy-groups:
     type: load-balance
     strategy: consistent-hashing
     disable-udp: false
+    use:
+      - GUniversal
     proxies:
       - GUniversal
       - GSosmed
@@ -149,7 +151,9 @@ rules:
   - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
   - RULE-SET,RP-Direct,DIRECT
   - RULE-SET,RP-Reject,REJECT
-  - MATCH,GLOBAL
+  - RULE-SET,RP-Sosmed,GSosmed
+  - RULE-SET,RP-Streaming,GStream
+  - MATCH,GLoadBalance
 # ================= ZILNET META ==================
 geodata-mode: false
 geodata-loader: memconservative
@@ -161,6 +165,5 @@ sniffer:
     - http
 authentication:
   - Clash:oHeRh67o
-  
 
 # ================= ZILNET META ==================
