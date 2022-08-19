@@ -39,7 +39,7 @@ proxies:
   servername: api.midtrans.com
   network: ws
   ws-opts:
-    path: ws://api.midtrans.com/fastssh/rovinstream/62fcd8076729c/
+    path: ws://api.midtrans.com/fastssh/wkwkwk/62ff992c34703/
     headers:
       Host: sg2.vless.co
   udp: true
