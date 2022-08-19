@@ -165,8 +165,15 @@ rules:
   - DST-PORT,7895,REJECT
   - DST-PORT,7892,REJECT
   - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+  
+  - GEOIP,private,DIRECT,no-resolve
+  - GEOIP,cn,DIRECT
+  
   - RULE-SET,RP-Direct,DIRECT
   - RULE-SET,RP-Reject,REJECT
+  - RULE-SET,RP-Gaming,GGame
+  - RULE-SET,RP-Sosmed,GSosmed
+  - RULE-SET,RP-Streaming,GStream
   - MATCH,Gloadbalance
 # ================= ZILNET META ==================
 geodata-mode: false
