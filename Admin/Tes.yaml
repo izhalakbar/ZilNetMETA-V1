@@ -86,7 +86,7 @@ proxy-groups:
   - name: GUniversal
     type: url-test
     url: http://www.gstatic.com/generate_204
-    proxies:
+    use:
       - PUniversal
     interval: 300
     tolerance: 150
