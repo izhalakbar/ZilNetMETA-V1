@@ -167,9 +167,7 @@ rules:
   - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
   - RULE-SET,RP-Direct,DIRECT
   - RULE-SET,RP-Reject,REJECT
-  - RULE-SET,RP-Sosmed,GSosmed
-  - RULE-SET,RP-Streaming,GStream
-  - MATCH,Gloadbalance
+  - MATCH,Global
 # ================= ZILNET META ==================
 geodata-mode: false
 geodata-loader: memconservative
