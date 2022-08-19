@@ -108,7 +108,7 @@ proxy-groups:
     interval: 300
     
   - name: GGame
-      type: url-test
+      type: select
       disable-udp: false
       use:
         - PGame
