@@ -85,9 +85,10 @@ proxy-groups:
     
   - name: GUniversal
     type: select
-    url: http://www.gstatic.com/generate_204
+    disable-udp: false
     use:
       - PUniversal
+    url: http://www.gstatic.com/generate_204
     interval: 300
       
   - name: GSosmed
@@ -113,7 +114,7 @@ proxy-groups:
         - PGame
       url: http://www.gstatic.com/generate_204
       interval: 300
-      tolerance: 150
+
 # ================= ZILNET META ==================
 proxy-providers:
   PUniversal:
