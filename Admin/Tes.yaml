@@ -84,12 +84,11 @@ proxy-groups:
     interval: 300
     
   - name: GUniversal
-    type: url-test
+    type: select
     url: http://www.gstatic.com/generate_204
     use:
       - PUniversal
     interval: 300
-    tolerance: 150
       
   - name: GSosmed
     type: select
