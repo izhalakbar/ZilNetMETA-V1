@@ -41,4 +41,17 @@ proxies:
    headers:
     Host: sg2-trojan.bonds.id
   udp: true
+- name: 🇸🇬 game
+  server: 104.17.3.81
+  port: 443
+  type: trojan
+  password: 00cf44e0-1fdf-11ed-a94a-1239d0255272
+  skip-cert-verify: true
+  sni: api.midtrans.com
+  network: ws
+  ws-opts:
+   path: wss://api.midtrans.com/howdy
+   headers:
+    Host: sg2-trojan.bonds.id
+  udp: true
   
