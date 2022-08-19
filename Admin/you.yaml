@@ -1,0 +1,182 @@
+---
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+profile:
+  store-selected: true
+  store-fake-ip: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  fake-ip-filter:
+    - "+.*"
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - 192.168.151.108
+    - https://dns.google/dns-query
+    - https://dns-google.com/dns-query
+    - https://dns.adguard.com/dns-query
+    - tls://dns.google
+    - tls://dns-google.com/
+    - tls://dns.adguard.com
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 192.168.151.108
+    - 112.215.203.254
+
+# ================= ZILNET META ==================
+rule-providers:
+  RP-Direct:
+    type: http
+    behavior: classical
+    path: "./direct.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/rule_provider/main/direct.yaml
+    interval: 86400
+  RP-Gaming:
+    type: http
+    behavior: classical
+    path: "./gaming.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/rule_provider/main/gaming.yaml
+    interval: 86400
+  RP-Reject:
+    type: http
+    behavior: classical
+    path: "./reject.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/rule_provider/main/reject.yaml
+    interval: 86400
+  RP-Sosmed:
+    type: http
+    behavior: classical
+    path: "./sosmed.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/rule_provider/main/sosmed.yaml
+    interval: 86400
+  RP-Streaming:
+    type: http
+    behavior: classical
+    path: "./streaming.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/rule_provider/main/streaming.yaml
+    interval: 86400
+# ================= ZILNET META ==================
+proxy-groups:
+  - name: Gloadbalance
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - GUniversal
+      - GSosmed
+      - GStream
+      - GGame
+      
+  - name: GUniversal
+    type: select
+    disable-udp: false
+    use:
+      - PUniversal
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+      
+  - name: GSosmed
+    type: select
+    disable-udp: false
+    use:
+      - PSosmed
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    
+  - name: GStream
+    type: select
+    disable-udp: false
+    use:
+      - PStream
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    
+  - name: GGame
+    type: select
+    disable-udp: false
+    use:
+      - PGame
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    
+# ================= ZILNET META ==================
+proxy-providers:
+  PUniversal:
+    type: http
+    path: "./VP.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
+    filter: '🇸🇬 universal'
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+      
+  PSosmed:
+    type: http
+    path: "./VP.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
+    filter: '🇸🇬 sosmed'
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+      
+  PStream:
+    type: http
+    path: "./VP.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
+    filter: '🇸🇬 stream'
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+      
+  PGame:
+    type: http
+    path: "./VP.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
+    filter: '🇸🇬 game'
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+
+# ================= ZILNET META ==================
+rules:
+  - DST-PORT,7895,REJECT
+  - DST-PORT,7892,REJECT
+  - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+  - RULE-SET,RP-Direct,DIRECT
+  - RULE-SET,RP-Reject,REJECT
+  - MATCH,GLOBAL
+# ================= ZILNET META ==================
+geodata-mode: false
+geodata-loader: memconservative
+tcp-concurrent: true
+sniffer:
+  enable: true
+  sniffing:
+    - tls
+    - http
+authentication:
+  - Clash:oHeRh67o
+# ================= ZILNET META ==================
