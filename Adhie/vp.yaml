@@ -2,19 +2,17 @@ proxies:
 - name: 🇸🇬 universal
   server: 104.17.3.81
   port: 443
-  type: vmess
-  uuid: 9dc0c6aa-39a1-46be-9938-85999e3c3498
-  alterId: 0
-  cipher: auto
-  tls: true
+  type: trojan
+  password: 181d0430-2086-11ed-98a2-1239d0255272
   skip-cert-verify: true
-  servername: api.midtrans.com
+  sni: api.midtrans.com
   network: ws
   ws-opts:
-    path: ws://api.midtrans.com/fastssh/anggununiv/62ff981c557bd/
-    headers:
-      Host: sg2.v2-ray.com
+   path: wss://api.midtrans.com/howdy
+   headers:
+    Host: sg2-trojan.bonds.id
   udp: true
+  
 - name: 🇸🇬 sosmed
   server: 104.17.3.81
   port: 443
