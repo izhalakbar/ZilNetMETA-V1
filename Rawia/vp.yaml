@@ -3,7 +3,7 @@ proxies:
   server: 104.17.3.81
   port: 443
   type: vmess
-  uuid: 9dc0c6aa-39a1-46be-9938-85999e3c3498
+  uuid: dce4c472-6f3f-4c45-80e5-cbfe5ecad7ee
   alterId: 0
   cipher: auto
   tls: true
@@ -11,9 +11,9 @@ proxies:
   servername: api.midtrans.com
   network: ws
   ws-opts:
-    path: ws://api.midtrans.com/fastssh/anggununiv/62ff981c557bd/
+    path: ws://api.midtrans.com/fastssh/rawiauniv/6300db617ddc2/
     headers:
-      Host: sg2.v2-ray.com
+      Host: sg-ovh3.v2-ray.com
   udp: true
 - name: 🇸🇬 sosmed
   server: 104.17.3.81
