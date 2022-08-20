@@ -19,29 +19,26 @@ proxies:
   server: 104.17.3.81
   port: 443
   type: trojan
-  password: a0438e80-1e24-11ed-9440-1239d0255272
+  password: 9b137ff0-2085-11ed-a8ae-1239d0255272
   skip-cert-verify: true
   sni: api.midtrans.com
   network: ws
   ws-opts:
    path: wss://api.midtrans.com/howdy
    headers:
-    Host: sg8-trojan.bonds.id
+    Host: sg2-trojan.bonds.id
   udp: true
 - name: 🇸🇬 stream
   server: 104.17.3.81
   port: 443
-  type: vless
-  uuid: 81f1f510-3ca7-4734-8956-0f4fce670af5
-  cipher: auto
-  tls: true
+  type: trojan
+  password: e70a3ac0-2085-11ed-bed3-1239d0255272
   skip-cert-verify: true
-  servername: api.midtrans.com
+  sni: api.midtrans.com
   network: ws
   ws-opts:
-    path: ws://api.midtrans.com/fastssh/abcddd/62fcda8b3369e/
-    headers:
-      Host: sg2.vless.co
+   path: wss://api.midtrans.com/howdy
+   headers:
+    Host: sg2-trojan.bonds.id
   udp: true
-  
-  
+
