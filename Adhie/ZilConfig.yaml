@@ -35,7 +35,7 @@ rule-providers:
 proxy-providers:
   ZilVpn:
     type: http
-    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Anggun/vp.yaml
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Adhie/vp.yaml
     interval: 3600
     path: "./vp.yaml"
     health-check:
@@ -45,9 +45,9 @@ proxy-providers:
 
   PP-Gaming:
     type: http
-    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA/main/Admin/VG.yaml
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA/main/Adhie/vg.yaml
     interval: 3600
-    path: "./VG.yaml"
+    path: "./vg.yaml"
     health-check:
       enable: true
       interval: 600
