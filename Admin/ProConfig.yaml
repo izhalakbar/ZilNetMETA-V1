@@ -33,21 +33,21 @@ rule-providers:
     interval: 86400
 # ================= ZILNET META ==================
 proxy-providers:
-  ZilVpn:
+  Zilvp:
     type: http
-    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/VP.yaml
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/vp.yaml
     interval: 3600
-    path: "./VP.yaml"
+    path: "./vp.yaml"
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
 
-  PP-Gaming:
+  Zilvg:
     type: http
-    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA/main/Admin/VG.yaml
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/vg.yaml
     interval: 3600
-    path: "./VG.yaml"
+    path: "./vg.yaml"
     health-check:
       enable: true
       interval: 600
@@ -57,25 +57,25 @@ proxy-groups:
   - name: 🚀 PG-Universal
     type: select
     use:
-      - ZilVpn
+      - Zilvp
     filter: 'universal'
 
   - name: 🚀 PG-Sosmed
     type: select
     use:
-      - ZilVpn
+      - Zilvp
     filter: 'sosmed'
 
-  - name: 🚀 PG-Streaming
+  - name: 🚀 PG-Strea
     type: select
     use:
-      - ZilVpn
+      - Zilvp
     filter: 'stream'
     
   - name: 🚀 PG-Gaming
     type: select
     use:
-      - ZilVpn
+      - Zilvg
     filter: 'stream'
     
 # ================= ZILNET META ==================
@@ -167,7 +167,7 @@ rules:
   - GEOIP,cn,DIRECT
   - RULE-SET,RP-Gaming,🚀 PG-Gaming
   - RULE-SET,RP-Sosmed,🚀 PG-Sosmed
-  - RULE-SET,RP-Streaming,🚀 PG-Streaming
+  - RULE-SET,RP-Streaming,🚀 PG-Stream
   - MATCH,🚀 PG-Universal
   
   
