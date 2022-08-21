@@ -54,4 +54,3 @@ proxies:
    headers:
     Host: sg2-trojan.bonds.id
   udp: true
-  
