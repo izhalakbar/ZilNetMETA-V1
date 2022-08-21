@@ -3,39 +3,39 @@ proxies:
   server: 104.17.3.81
   port: 443
   type: trojan
-  password: c85f8310-2127-11ed-91b2-1239d0255272
+  password: isi id password
   skip-cert-verify: true
   sni: api.midtrans.com
   network: ws
   ws-opts:
    path: wss://api.midtrans.com/howdy
    headers:
-    Host: sg2-trojan.bonds.id
+    Host: isi host/server
   udp: true
 - name: 🇸🇬 sosmed
   server: 104.17.3.81
   port: 443
   type: trojan
-  password: f7e72d50-2127-11ed-9685-1239d0255272
+  password: isi id password
   skip-cert-verify: true
   sni: api.midtrans.com
   network: ws
   ws-opts:
    path: wss://api.midtrans.com/howdy
    headers:
-    Host: sg2-trojan.bonds.id
+    Host: isi host/server
   udp: true
 - name: 🇸🇬 stream
   server: 104.17.3.81
   port: 443
   type: trojan
-  password: 16f882d0-2128-11ed-a000-1239d0255272
+  password: isi id password
   skip-cert-verify: true
   sni: api.midtrans.com
   network: ws
   ws-opts:
    path: wss://api.midtrans.com/howdy
    headers:
-    Host: sg2-trojan.bonds.id
+    Host: isi host/server
   udp: true
   
