@@ -1,1 +1,41 @@
-ssss
+proxies:
+- name: 🇸🇬 universal
+  server: 104.17.3.81
+  port: 443
+  type: trojan
+  password: isi id password
+  skip-cert-verify: true
+  sni: api.midtrans.com
+  network: ws
+  ws-opts:
+   path: wss://api.midtrans.com/howdy
+   headers:
+    Host: isi host/server
+  udp: true
+- name: 🇸🇬 sosmed
+  server: 104.17.3.81
+  port: 443
+  type: trojan
+  password: isi id password
+  skip-cert-verify: true
+  sni: api.midtrans.com
+  network: ws
+  ws-opts:
+   path: wss://api.midtrans.com/howdy
+   headers:
+    Host: isi host/server
+  udp: true
+- name: 🇸🇬 stream
+  server: 104.17.3.81
+  port: 443
+  type: trojan
+  password: isi id password
+  skip-cert-verify: true
+  sni: api.midtrans.com
+  network: ws
+  ws-opts:
+   path: wss://api.midtrans.com/howdy
+   headers:
+    Host: isi host/server
+  udp: true
+  
