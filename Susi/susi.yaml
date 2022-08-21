@@ -1,1 +1,171 @@
-ssssss
+---
+# ================= ZILNET META ==================
+rule-providers:
+  RP-Direct:
+    type: http
+    behavior: classical
+    path: "./direct.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/rule_provider/main/direct.yaml
+    interval: 86400
+  RP-Gaming:
+    type: http
+    behavior: classical
+    path: "./gaming.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/rule_provider/main/gaming.yaml
+    interval: 86400
+  RP-Reject:
+    type: http
+    behavior: classical
+    path: "./reject.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/rule_provider/main/reject.yaml
+    interval: 86400
+  RP-Sosmed:
+    type: http
+    behavior: classical
+    path: "./sosmed.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/rule_provider/main/sosmed.yaml
+    interval: 86400
+  RP-Streaming:
+    type: http
+    behavior: classical
+    path: "./streaming.yaml"
+    url: https://raw.githubusercontent.com/izhalakbar/rule_provider/main/streaming.yaml
+    interval: 86400
+# ================= ZILNET META ==================
+proxy-providers:
+  Zilvp:
+    type: http
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/vp.yaml
+    interval: 3600
+    path: "./vp.yaml"
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  Zilvg:
+    type: http
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/vg.yaml
+    interval: 3600
+    path: "./vg.yaml"
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+# ================= ZILNET META ==================
+proxy-groups:
+  - name: 🚀 PG-Universal
+    type: select
+    use:
+      - Zilvp
+    filter: 'universal'
+
+  - name: 🚀 PG-Sosmed
+    type: select
+    use:
+      - Zilvp
+    filter: 'sosmed'
+
+  - name: 🚀 PG-Stream
+    type: select
+    use:
+      - Zilvp
+    filter: 'stream'
+    
+  - name: 🚀 PG-Gaming
+    type: select
+    use:
+      - Zilvg
+    filter: 'gameone'
+    
+# ================= ZILNET META ==================
+dns:
+  enable: true
+  use-hosts: true
+  ipv6: false
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  listen: 127.0.0.1:6868
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+    - 119.29.29.29
+    - 114.114.114.114
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+    - tcp://1.1.1.1
+    - tcp://8.8.8.8
+    - https://doh.pub/dns-query
+    - tls://223.5.5.5:853
+  fallback:
+    - 1.0.0.1
+    - 8.8.4.4
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+    - 112.215.37.165
+    - https://1.0.0.1/dns-query  # append the proxy adapter name or group name to the end of DNS URL with '#' prefix.
+    - tls://8.8.4.4:853
+  fallback-filter:
+    geoip: false
+    geosite:
+      - gfw  # `geosite` filter only use fallback server to resolve ip, prevent DNS leaks to unsafe DNS providers.
+    domain:
+      - +.example.com
+    ipcidr:
+      - 0.0.0.0/32
+
+# Enable the TUN listener
+tun:
+  enable: true
+  stack: gvisor #  only gvisor
+  dns-hijack: 
+    - tcp://8.8.8.8:53
+    - tcp://8.8.4.4:53
+  auto-route: true # auto set global route
+  
+# Enable the TPROXY listener
+tproxy-port: 9898
+
+iptables:
+  enable: true # default is false
+  inbound-interface: en0 # detect the inbound interface, default is 'lo'
+  
+rules:
+  
+  # network(tcp/udp) condition for all rules
+  - DOMAIN-SUFFIX,bilibili.com,DIRECT,tcp
+  - DOMAIN-SUFFIX,bilibili.com,REJECT,udp
+  
+  # multiport condition for rules SRC-PORT and DST-PORT
+  - DST-PORT,123/136/137-139,DIRECT,udp
+  
+  # rule GEOSITE
+  - GEOSITE,category-ads-all,DIRECT
+  - GEOSITE,icloud@cn,DIRECT
+  - GEOSITE,apple@cn,DIRECT
+  - GEOSITE,apple-cn,DIRECT
+  - GEOSITE,microsoft@cn,DIRECT
+  - GEOSITE,geolocation-cn,DIRECT
+  
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR6,::1/128,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+  - IP-CIDR6,fd00::/8,DIRECT,no-resolve
+  - SRC-IP-CIDR,192.168.1.201/32,DIRECT
+  - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+  - GEOIP,IR,DIRECT
+  
+  # sumber kondisi IPCIDR untuk semua aturan di proxy gateway
+  #- GEOSITE,geolocation-!cn,REJECT,192.168.1.88/32,192.168.1.99/32
+  - GEOIP,private,DIRECT,no-resolve
+  - GEOIP,cn,DIRECT
+  - RULE-SET,RP-Gaming,🚀 PG-Gaming
+  - RULE-SET,RP-Sosmed,🚀 PG-Sosmed
+  - RULE-SET,RP-Streaming,🚀 PG-Stream
+  - MATCH,🚀 PG-Universal
