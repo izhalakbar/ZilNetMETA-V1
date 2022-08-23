@@ -35,7 +35,7 @@ rule-providers:
 proxy-providers:
   Zilvp:
     type: http
-    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/vp.yaml
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Putri/vp.yaml
     interval: 3600
     path: "./vp.yaml"
     health-check:
@@ -45,7 +45,7 @@ proxy-providers:
 
   Zilvg:
     type: http
-    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main/Admin/vg.yaml
+    url: https://raw.githubusercontent.com/izhalakbar/ZilNetMETA-V1/main//vg.yaml
     interval: 3600
     path: "./vg.yaml"
     health-check:
